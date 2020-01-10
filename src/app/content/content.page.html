@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  button>
+    <ion-img src='{{con.sourceOfPhoto}}'>
+    </ion-img>
+    <ion-text color="primary" class="ion-text-center">
+      <h3>{{con.nameOfAid}}</h3>
+      <h5>{{con.description}}</h5>
+    </ion-text>
+  </ion-card>
+</ion-content>

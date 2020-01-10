@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-label button>QuickHelp</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let data of list; let i = index" button [routerLink]="['../content',i]">
+    <ion-img src='{{data.Source}}'>
+    </ion-img>
+    <ion-text color="primary" text-center>
+      <h4>{{data.Name}}</h4>
+    </ion-text>
+  </ion-card>
+</ion-content>

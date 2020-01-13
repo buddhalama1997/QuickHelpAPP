@@ -11,7 +11,7 @@
     <h1>Emergency Contact</h1>
   </ion-text>
 <ion-grid>
-  <ion-row *ngFor="let cont of lists">
+  <ion-row *ngFor="let cont of lists" (click)= "call1()">
     <ion-col size="4">
       <ion-img src="{{cont.Source}}">
       </ion-img>

@@ -6,9 +6,10 @@ import { Contact } from '../service/Contact';
   templateUrl: './emergency.page.html',
   styleUrls: ['./emergency.page.scss'],
 })
+import { CallNumber } from '@ionic-native/call-number/ngx';
 export class EmergencyPage implements OnInit {
   lists: Contact[];
-  constructor(private services: AppServiceService) { }
+  constructor(private services: AppServiceService, private callNumber: CallNumber) { }
 
   ngOnInit() {
     this.services.getContact().subscribe(action => {
@@ -18,5 +19,11 @@ export class EmergencyPage implements OnInit {
         } as Contact;
       })
     })
+  }
+
+  call1(){
+    this.callNumber.callNumber("18001010101", true)
+  .then(res => console.log('Launched dialer!', res))
+  .catch(err => console.log('Error launching dialer', err));
   }
 }

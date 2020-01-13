@@ -11,12 +11,9 @@ export class EmergencyPage implements OnInit {
   constructor(private services: AppServiceService) { }
 
   ngOnInit() {
-    this.services.getContact().subscribe(action => {
-      this.lists = action.map(item => {
-        return {
-          ...item.payload.doc.data()
-        } as Contact;
-      })
-    })
+    this.services.getContact().subscribe(res=>{
+      this.lists = res;
+    });
   }
+
 }

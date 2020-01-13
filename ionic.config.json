@@ -1,5 +1,7 @@
 {
   "name": "QuickHelp App",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

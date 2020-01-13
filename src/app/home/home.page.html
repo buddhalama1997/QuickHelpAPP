@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let data of list; let i = index" button [routerLink]="['../content',i]">
+  <ion-card *ngFor="let data of dataSource; let i = index" button [routerLink]="['../content',i]">
     <ion-img src='{{data.Source}}'>
     </ion-img>
     <ion-text color="primary" text-center>

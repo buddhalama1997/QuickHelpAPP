@@ -11,17 +11,11 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 
 export class HomePage implements OnInit {
-  list: SourceData[];
-  constructor(private service: AppServiceService) {
-  }
-
+  dataSource:SourceData[];
+  constructor(private service: AppServiceService) { }
  ngOnInit() {
-   this.service.getDetails().subscribe(action => {
-     this.list = action.map(item => {
-       return {
-         ...item.payload.doc.data()
-       } as SourceData;
-     })
-   })
- }
+   this.service.getDetails().subscribe(res=>{
+     this.dataSource = res;
+   });
+}
 }

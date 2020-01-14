@@ -6,7 +6,6 @@ import { Contact } from '../service/Contact';
   templateUrl: './emergency.page.html',
   styleUrls: ['./emergency.page.scss'],
 })
-import { CallNumber } from '@ionic-native/call-number/ngx';
 export class EmergencyPage implements OnInit {
   lists: Contact[];
   constructor(private services: AppServiceService, private callNumber: CallNumber) { }
@@ -21,9 +20,4 @@ export class EmergencyPage implements OnInit {
     })
   }
 
-  call1(){
-    this.callNumber.callNumber("18001010101", true)
-  .then(res => console.log('Launched dialer!', res))
-  .catch(err => console.log('Error launching dialer', err));
-  }
 }

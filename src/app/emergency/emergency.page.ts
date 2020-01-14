@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppServiceService } from './../service/app-service.service';
-import { Contact } from '../service/Contact';
+import { Contact } from '../ServiceContact/Contact';
+import { ContactServiceService } from '../ServiceContact/contact-service.service';
 @Component({
   selector: 'app-emergency',
   templateUrl: './emergency.page.html',
@@ -8,12 +8,11 @@ import { Contact } from '../service/Contact';
 })
 export class EmergencyPage implements OnInit {
   lists: Contact[];
-  constructor(private services: AppServiceService) { }
+  constructor(private services: ContactServiceService) { }
 
   ngOnInit() {
     this.services.getContact().subscribe(res=>{
       this.lists = res;
     });
   }
-
 }

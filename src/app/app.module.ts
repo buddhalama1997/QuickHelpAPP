@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppServiceService } from '../app/Service/app-service.service';
+import { ContactServiceService } from './ServiceContact/contact-service.service';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AppServiceService } from '../app/Service/app-service.service';
   providers: [
     StatusBar,
     AppServiceService,
+    ContactServiceService,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

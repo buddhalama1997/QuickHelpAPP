@@ -13,8 +13,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppServiceService } from '../app/Service/app-service.service';
 import { ContactServiceService } from './ServiceContact/contact-service.service';
-
-
+import { CallNumber } from '@ionic-native/call-number/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -30,6 +29,7 @@ import { ContactServiceService } from './ServiceContact/contact-service.service'
     AppServiceService,
     ContactServiceService,
     SplashScreen,
+    CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

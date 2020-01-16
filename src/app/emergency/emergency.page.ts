@@ -17,7 +17,7 @@ export class EmergencyPage implements OnInit {
     });
   }
   call1(){
-    this.callNumber.callNumber("18001010101", true)
+    this.callNumber.callNumber("100", true)
   .then(res => console.log('Launched dialer!', res))
   .catch(err => console.log('Error launching dialer', err));
   }

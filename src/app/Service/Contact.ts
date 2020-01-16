@@ -1,6 +1,6 @@
 export class Contact {
     id: string;
-    Name: string;
+    ContactName: string;
     Number: string;
-    Source: string;
+    Image: string;
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from '../ServiceContact/Contact';
-import { ContactServiceService } from '../ServiceContact/contact-service.service';
+
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { AppServiceService } from '../service/app-service.service';
+import { Contact } from '../service/Contact';
 @Component({
   selector: 'app-emergency',
   templateUrl: './emergency.page.html',
@@ -9,11 +10,11 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 })
 export class EmergencyPage implements OnInit {
   lists: Contact[];
-  constructor(private services: ContactServiceService, private callNumber: CallNumber) { }
+  constructor(private services: AppServiceService, private callNumber: CallNumber) { }
 
   ngOnInit() {
-    this.services.getContact().subscribe(res=>{
-      this.lists = res;
+    this.services.getContact().subscribe(result=>{
+      this.lists = result;
     });
   }
   call1(){

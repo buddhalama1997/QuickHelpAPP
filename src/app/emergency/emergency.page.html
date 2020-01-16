@@ -13,10 +13,10 @@
 <ion-grid>
   <ion-row *ngFor="let cont of lists" (click)= "call1()">
     <ion-col size="4">
-      <ion-img src="{{cont.Source}}">
+      <ion-img src="{{cont.Image}}">
       </ion-img>
       <ion-text color="primary" class="ion-text-center">
-        <h6>{{cont.Name}}</h6>
+        <h6>{{cont.ContactName}}</h6>
       </ion-text>
     </ion-col>
     <ion-col size="4">

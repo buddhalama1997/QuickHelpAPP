@@ -12,7 +12,6 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppServiceService } from '../app/Service/app-service.service';
-import { ContactServiceService } from './ServiceContact/contact-service.service';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +26,6 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
   providers: [
     StatusBar,
     AppServiceService,
-    ContactServiceService,
     SplashScreen,
     CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

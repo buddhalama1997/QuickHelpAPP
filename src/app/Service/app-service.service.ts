@@ -24,7 +24,7 @@ export class AppServiceService {
           return {id,...data};
         });
       })
-    )
+)
 
     this.contactCollection = fire.collection<Contact>('EmergencyContact');
     this.contact = this.contactCollection.snapshotChanges().pipe(

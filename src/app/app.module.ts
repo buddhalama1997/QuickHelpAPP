@@ -13,20 +13,27 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppServiceService } from '../app/Service/app-service.service';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { Network } from '@ionic-native/network/ngx'
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireDatabaseModule
   ],
   providers: [
     StatusBar,
     AppServiceService,
     SplashScreen,
+    Network,
     CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -4,6 +4,7 @@ import { SourceData } from './SourceData';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { Contact } from './Contact';
+import { Feedback } from './feedback';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,8 @@ export class AppServiceService {
   private contactCollection: AngularFirestoreCollection<Contact>;
   private contact: Observable<Contact[]>;
   
-
+  private feedbackCollection: AngularFirestoreCollection<Feedback>
+  private feedback: Observable<Feedback[]>
   constructor(fire: AngularFirestore) { 
     this.datasCollection = fire.collection<SourceData>('Data');
     this.datas = this.datasCollection.snapshotChanges().pipe(
@@ -35,9 +37,19 @@ export class AppServiceService {
           return {id,...data};
         });
       })
-    )
+)
+    this.feedbackCollection = fire.collection<Feedback>('Feedback');
+    this.feedback = this.feedbackCollection.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return {id,...data};
+        });
+      })
+)
    }
-   getDetails(){
+  getDetails(){
      return this.datas;
    }
   getDetail(id){
@@ -45,5 +57,14 @@ export class AppServiceService {
   }
   getContact(){
     return this.contact;
+  }
+  postFeedback(feedback: Feedback){
+    return this.feedbackCollection.add(feedback);
+  }
+  getFeedback(id){
+    return this.feedbackCollection.doc<Feedback>(id).valueChanges();
+  }
+  updatefeedback(feedback: Feedback, id: string) {
+    return this.feedbackCollection.doc(id).update(feedback);
   }
 }

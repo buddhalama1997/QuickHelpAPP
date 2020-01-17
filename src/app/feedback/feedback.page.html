@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-input required type ="text" placeholder = "Enter your  valid Email" [(ngModel)]="feedback.Email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input required type ="text" placeholder = "Suggestion" [(ngModel)]="feedback.Suggestion"></ion-input>
+  </ion-item>
+</ion-list>
+<ion-button expand="full" (click)="savefeedback()">Submit</ion-button>
+</ion-content>

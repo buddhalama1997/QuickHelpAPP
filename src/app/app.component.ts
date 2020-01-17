@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'Nearby Hospital',
       url: '/content',
       icon: 'locate'
+    },
+    {
+      title: 'Feedback',
+      url: '/feedback',
+      icon: 'locate'
     }
   ];
 

@@ -18,7 +18,16 @@ const routes: Routes = [
   {
     path: 'content',
     loadChildren: () => import('./content/content.module').then( m => m.ContentPageModule)
+  },
+  {
+    path: 'feedback',
+    loadChildren: () => import('./feedback/feedback.module').then( m => m.FeedbackPageModule)
+  },
+  {
+    path: 'feedback/:id',
+    loadChildren: () => import('./feedback/feedback.module').then( m => m.FeedbackPageModule)
   }
+
 ];
 
 @NgModule({

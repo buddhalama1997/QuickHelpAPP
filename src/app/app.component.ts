@@ -29,7 +29,7 @@ export class AppComponent {
     {
       title: 'Feedback',
       url: '/feedback',
-      icon: 'locate'
+      icon: 'paper'
     }
   ];
 

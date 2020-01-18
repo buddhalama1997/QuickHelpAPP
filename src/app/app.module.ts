@@ -15,7 +15,7 @@ import { AppServiceService } from '../app/Service/app-service.service';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { Network } from '@ionic-native/network/ngx'
-import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [AppComponent],

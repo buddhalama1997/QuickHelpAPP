@@ -3,6 +3,7 @@ import { AppServiceService } from '../service/app-service.service';
 import { Feedback } from '../service/feedback';
 import { LoadingController, NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.page.html',
@@ -14,7 +15,7 @@ export class FeedbackPage implements OnInit {
     Suggestion:""
   };
   feedId = null;
-  constructor(private service: AppServiceService, private route: ActivatedRoute, private loadingController: LoadingController, private nav: NavController) { }
+  constructor(private service: AppServiceService, private toast: ToastController, private route: ActivatedRoute, private loadingController: LoadingController, private nav: NavController) { }
 
   ngOnInit() {
     this.feedId = this.route.snapshot.params['id'];
@@ -34,6 +35,14 @@ export class FeedbackPage implements OnInit {
     });
   }
 
+  async presentToast() {
+    const toast = await this.toast.create({
+      message: 'Thank you for your suggestion.',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   async savefeedback() {
  
     const loading = await this.loadingController.create({
@@ -49,6 +58,7 @@ export class FeedbackPage implements OnInit {
     } else {
       this.service.postFeedback(this.feedback).then(() => {
         loading.dismiss();
+        this.presentToast();
         this.nav.back();
       });
     }

@@ -12,10 +12,13 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppServiceService } from '../app/Service/app-service.service';
+import { OfflineManagerService } from '../app/Service/offline-manager.service';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { Network } from '@ionic-native/network/ngx'
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+import { SQLite } from '@ionic-native/sqlite/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +35,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   providers: [
     StatusBar,
     AppServiceService,
+    OfflineManagerService,
     SplashScreen,
+    SQLitePorter,
+    SQLite,
     Network,
     CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

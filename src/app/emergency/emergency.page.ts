@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
-import { AppServiceService } from '../service/app-service.service';
-import { Contact } from '../service/Contact';
+import { OfflineManagerService, Contact} from '../Service/offline-manager.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-emergency',
   templateUrl: './emergency.page.html',
   styleUrls: ['./emergency.page.scss'],
 })
 export class EmergencyPage implements OnInit {
-  lists: Contact[];
-  constructor(private services: AppServiceService, private callNumber: CallNumber) { }
+  contacts:Contact[];
+  constructor(private services: OfflineManagerService, private callNumber: CallNumber) { }
 
   ngOnInit() {
-    this.services.getContact().subscribe(result=>{
-      this.lists = result;
+    this.services.getDatabaseState().subscribe(rdy => {
+      if (rdy) {
+        this.services.getContact().subscribe(devs => {
+          this.contacts = devs;
+        })
+      }
     });
   }
   call1(){

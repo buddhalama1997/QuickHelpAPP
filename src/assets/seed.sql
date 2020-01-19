@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS EmergencyContact(id Number,Contactname TEXT,Number TEXT,Image TEXT);
+INSERT or IGNORE INTO EmergencyContact VALUES (1, 'Police', '100', 'https://firebasestorage.googleapis.com/v0/b/quickhelp-c9f7d.appspot.com/o/image%2Fpolice.jpg?alt=media&token=4d102633-c423-46a7-816e-c26c7b71740a');
+INSERT or IGNORE INTO EmergencyContact VALUES (2, 'Fire Brigade', '101', 'https://firebasestorage.googleapis.com/v0/b/quickhelp-c9f7d.appspot.com/o/image%2Ffire.jpg?alt=media&token=ed32ca2f-3000-47ab-8cd5-0ac3089fc10b');
+INSERT or IGNORE INTO EmergencyContact VALUES (3, 'Ambulance', '104', 'https://firebasestorage.googleapis.com/v0/b/quickhelp-c9f7d.appspot.com/o/image%2FAmbulance.jpg?alt=media&token=81d2a558-eb74-4488-99dd-285203f838c8');

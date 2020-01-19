@@ -23,7 +23,7 @@ export class AppComponent {
     },
     {
       title: 'Nearby Hospital',
-      url: '/content',
+      url: '/map',
       icon: 'locate'
     },
     {

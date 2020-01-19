@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AppServiceService } from '../service/app-service.service';
 import { Contact } from '../service/Contact';
+
 @Component({
   selector: 'app-emergency',
   templateUrl: './emergency.page.html',

@@ -16,6 +16,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { Network } from '@ionic-native/network/ngx'
 import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { AngularFireDatabaseModule} from 'angularfire2/database';
     SplashScreen,
     Network,
     CallNumber,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Geolocation
   ],
   bootstrap: [AppComponent]
 })

@@ -17,7 +17,7 @@ export class MapPage implements OnInit {
   constructor(public platform: Platform, public geolocation: Geolocation) { 
     this.platform.ready().then(()=>{
       var mapOptions={
-        center:{lat:23.2366,lng:79.3822},
+        center:{lat:28.3949,lng:84.1240},
         zoom:7
       }
       this.map = new google.maps.Map(document.getElementById("map"),mapOptions);
